@@ -28,9 +28,17 @@ const toggleLanguage = () => {
 };
 
 const initializeLanguage = () => {
-  const btn = document.querySelector('.language');
-  if (!btn) return setTimeout(initializeLanguage, 100);
-  btn.onclick = (e) => (e.preventDefault(), toggleLanguage());
+  const buttons = document.querySelectorAll('.language');
+  if (!buttons.length) return setTimeout(initializeLanguage, 100);
+
+  buttons.forEach((btn) => {
+    if (btn.hasAttribute('data-language-initialized')) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleLanguage();
+    });
+    btn.setAttribute('data-language-initialized', 'true');
+  });
 };
 
 applyLanguagePreferenceInstant(savedLanguage);

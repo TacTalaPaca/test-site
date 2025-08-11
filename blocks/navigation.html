@@ -2,15 +2,46 @@
   <div class="sidebar-inner">
     <div class="nav-top" role="navigation" aria-label="Primary">
       <a class="nav-logo" href="./index.html" title="Home" aria-label="Home">
-        <img src="../assets/icons/home1.svg" alt="" />
+        <img class="icon-light" src="../assets/icons/home1.svg" alt="" />
+        <img class="icon-dark" src="../assets/icons/home2.svg" alt="" />
       </a>
       <ul class="nav-list" role="list">
-        <li class="nav-item"><a class="nav-link" href="./explore.html" title="Explore" aria-label="Explore"><img src="../assets/icons/explore1.svg" alt="" /></a></li>
-        <li class="nav-item"><a class="nav-link" href="./books.html" title="Books" aria-label="Books"><img src="../assets/icons/book1.svg" alt="" /></a></li>
-        <li class="nav-item"><a class="nav-link" href="./games.html" title="Games" aria-label="Games"><img src="../assets/icons/games1.svg" alt="" /></a></li>
-        <li class="nav-item"><a class="nav-link" href="./shop.html" title="Shop" aria-label="Shop"><img src="../assets/icons/shop1.svg" alt="" /></a></li>
-        <li class="nav-item"><a class="nav-link" href="./team.html" title="Team" aria-label="Team"><img src="../assets/icons/team1.svg" alt="" /></a></li>
-        <li class="nav-item"><a class="nav-link" href="./contact.html" title="Contact" aria-label="Contact"><img src="../assets/icons/contact1.svg" alt="" /></a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="./explore.html" title="Explore" aria-label="Explore">
+            <img class="icon-light" src="../assets/icons/explore1.svg" alt="" />
+            <img class="icon-dark" src="../assets/icons/explore2.svg" alt="" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./books.html" title="Books" aria-label="Books">
+            <img class="icon-light" src="../assets/icons/book1.svg" alt="" />
+            <img class="icon-dark" src="../assets/icons/book2.svg" alt="" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./games.html" title="Games" aria-label="Games">
+            <img class="icon-light" src="../assets/icons/games1.svg" alt="" />
+            <img class="icon-dark" src="../assets/icons/games2.svg" alt="" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./shop.html" title="Shop" aria-label="Shop">
+            <img class="icon-light" src="../assets/icons/shop1.svg" alt="" />
+            <img class="icon-dark" src="../assets/icons/shop2.svg" alt="" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./team.html" title="Team" aria-label="Team">
+            <img class="icon-light" src="../assets/icons/team1.svg" alt="" />
+            <img class="icon-dark" src="../assets/icons/team2.svg" alt="" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contact.html" title="Contact" aria-label="Contact">
+            <img class="icon-light" src="../assets/icons/contact1.svg" alt="" />
+            <img class="icon-dark" src="../assets/icons/contact2.svg" alt="" />
+          </a>
+        </li>
       </ul>
     </div>
 
@@ -26,3 +57,98 @@
     </div>
   </div>
 </nav>
+
+<!-- Mobile navigation (visible only on phones via CSS) -->
+<div class="mobile-nav" aria-hidden="true">
+  <input id="mobile-menu-toggle" class="mobile-menu-toggle" type="checkbox" />
+
+  <!-- Open/Close button at bottom center -->
+  <label for="mobile-menu-toggle" class="mobile-menu-button" aria-label="Menu" title="Menu" aria-controls="mobile-menu-panel">
+    <span class="label-viewport">
+      <span class="label-stack">
+        <span class="menu">
+          <span class="eng">MENU</span>
+          <span class="rom">MENIU</span>
+        </span>
+        <span class="close">
+          <span class="eng">CLOSE</span>
+          <span class="rom">ÎNCHIDE</span>
+        </span>
+      </span>
+    </span>
+  </label>
+
+  <!-- Overlay closes on tap -->
+  <label for="mobile-menu-toggle" class="mobile-menu-overlay" aria-hidden="true"></label>
+
+  <!-- Rising panel -->
+  <div id="mobile-menu-panel" class="mobile-menu-panel" role="dialog" aria-label="Menu">
+    <ul class="mobile-menu-grid" role="list">
+      <li class="mobile-menu-item">
+        <a href="./index.html" title="Home" aria-label="Home">
+          <img class="icon-light" src="../assets/icons/home1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/home2.svg" alt="" />
+          <span class="label"><span class="eng">Home</span><span class="rom">Acasă</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <a href="./explore.html" title="Explore" aria-label="Explore">
+          <img class="icon-light" src="../assets/icons/explore1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/explore2.svg" alt="" />
+          <span class="label"><span class="eng">Explore</span><span class="rom">Explorează</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <a href="./books.html" title="Books" aria-label="Books">
+          <img class="icon-light" src="../assets/icons/book1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/book2.svg" alt="" />
+          <span class="label"><span class="eng">Books</span><span class="rom">Cărți</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <a href="./games.html" title="Games" aria-label="Games">
+          <img class="icon-light" src="../assets/icons/games1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/games2.svg" alt="" />
+          <span class="label"><span class="eng">Games</span><span class="rom">Jocuri</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <a href="./shop.html" title="Shop" aria-label="Shop">
+          <img class="icon-light" src="../assets/icons/shop1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/shop2.svg" alt="" />
+          <span class="label"><span class="eng">Shop</span><span class="rom">Magazin</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <a href="./team.html" title="Team" aria-label="Team">
+          <img class="icon-light" src="../assets/icons/team1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/team2.svg" alt="" />
+          <span class="label"><span class="eng">Team</span><span class="rom">Echipă</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <a href="./contact.html" title="Contact" aria-label="Contact">
+          <img class="icon-light" src="../assets/icons/contact1.svg" alt="" />
+          <img class="icon-dark" src="../assets/icons/contact2.svg" alt="" />
+          <span class="label"><span class="eng">Contact</span><span class="rom">Contact</span></span>
+        </a>
+      </li>
+      <li class="mobile-menu-item">
+        <button type="button" class="icon-btn theme" aria-label="Toggle theme" title="Toggle theme">
+          <img class="icon icon-light" src="../assets/icons/theme1.svg" alt="" />
+          <img class="icon icon-dark" src="../assets/icons/theme2.svg" alt="" />
+          <span class="label"><span class="eng">Theme</span><span class="rom">Temă</span></span>
+        </button>
+      </li>
+      <li class="mobile-menu-item">
+        <button type="button" class="icon-btn language" aria-label="Switch language" title="Switch language">
+          <span class="icon-wrapper">
+            <span class="eng">EN</span>
+            <span class="rom">RO</span>
+          </span>
+          <span class="label"><span class="eng">Language</span><span class="rom">Limbă</span></span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

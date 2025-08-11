@@ -9,14 +9,17 @@ const toggleTheme = () => {
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 };
 
-// Initialize theme button
+// Initialize theme buttons (desktop + mobile)
 const initializeTheme = () => {
-  const themeBtn = document.querySelector('.theme');
-  if (!themeBtn) return setTimeout(initializeTheme, 100);
-  if (themeBtn.hasAttribute('data-theme-initialized')) return;
+  const buttons = document.querySelectorAll('.theme');
+  if (!buttons.length) return setTimeout(initializeTheme, 100);
 
-  themeBtn.addEventListener('click', toggleTheme);
-  themeBtn.setAttribute('data-theme-initialized', 'true');
+  buttons.forEach((btn) => {
+    if (btn.hasAttribute('data-theme-initialized')) return;
+    btn.addEventListener('click', toggleTheme);
+    btn.setAttribute('data-theme-initialized', 'true');
+  });
+
   window.toggleTheme = toggleTheme;
 };
 
