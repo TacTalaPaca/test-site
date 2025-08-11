@@ -253,7 +253,6 @@ nav[data-include] {
 .nav-link img {
   width: 28px;
   height: 28px;
-  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
 .nav-link .icon-dark {
   display: none;
@@ -337,40 +336,6 @@ nav[data-include] {
   padding: 16px;
 }
 
-/* Ensure ANY nav link (including Homepage) matches .nav-link styles */
-/* Place near other .nav-* rules */
-.nav-list a {
-  display: inline-flex;
-  width: 56px;
-  height: 56px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  transition: none; /* no border/background transitions */
-}
-.nav-list a:hover {
-  background: var(--hover);
-  border-color: var(--accent);
-}
-.nav-list a img {
-  width: 28px;
-  height: 28px;
-}
-.nav-list a .icon-dark {
-  display: none;
-}
-:root.dark .nav-list a .icon-light {
-  display: none;
-}
-:root.dark .nav-list a .icon-dark {
-  display: inline;
-}
-.nav-list a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
 /* Mobile navigation (phones) */
 .mobile-nav {
   display: none;
@@ -429,11 +394,10 @@ nav[data-include] {
     gap: 8px;
     pointer-events: auto;
     cursor: pointer;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     z-index: 1002; /* above panel so menu appears from behind */
     font-weight: 700;
     letter-spacing: 1px;
-    transition: transform 380ms cubic-bezier(0.175, 0.885, 0.32, 1.275), min-width 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 280ms cubic-bezier(0.175, 0.885, 0.32, 1.275), min-width 220ms cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 220ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden; /* viewbox for sliding text */
     will-change: transform;
   }
@@ -447,15 +411,11 @@ nav[data-include] {
     transform: translateX(-50%) scale(0.92);
   }
 
-  .mobile-menu-button {
-    /* ensure text centered within wider viewport */
-    text-align: center;
-  }
   /* Stack MENU/CLOSE vertically and slide inside a viewport */
   .mobile-menu-button .label-viewport {
     display: block;
-    height: 1.3em;
-    line-height: 1.3;
+    height: 1.5em;
+    line-height: 1.5;
     overflow: hidden;
     letter-spacing: inherit;
     white-space: nowrap;
@@ -465,23 +425,23 @@ nav[data-include] {
     display: flex;
     flex-direction: column;
     align-items: center; /* horizontally center each line */
-    row-gap: 0.2em; /* more separation during slide */
+    row-gap: 0.15em; /* tighter gap for better morphing */
     transform: translateY(0);
-    transition: transform 420ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 320ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     will-change: transform;
   }
   .mobile-menu-button .menu,
   .mobile-menu-button .close {
     display: block;
-    height: 1.3em; /* match viewport */
-    line-height: 1.3;
+    height: 1.5em; /* match viewport height */
+    line-height: 1.5;
     width: auto; /* shrink to content */
     text-align: center; /* center text inside each line */
   }
 
   /* Slide distance equals line-height + gap for cleaner separation */
   .mobile-menu-toggle:checked ~ .mobile-menu-button .label-stack {
-    transform: translateY(calc(-1.3em - 0.2em));
+    transform: translateY(calc(-1.5em - 0.15em));
   }
 
   /* Ensure only slide animation applies (no fading/scaling) */
@@ -498,7 +458,7 @@ nav[data-include] {
   .mobile-menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: transparent;
     opacity: 0;
     visibility: hidden;
     transition: opacity 320ms cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0s linear 320ms;
@@ -515,14 +475,13 @@ nav[data-include] {
     transform-origin: bottom center;
     opacity: 0;
     visibility: hidden;
-    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0s linear 500ms;
+    transition: transform 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0s linear 350ms;
     background: var(--bg-soft);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 16px;
     min-width: min(92vw, 520px);
     pointer-events: none;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
     z-index: 1001; /* under the button */
     will-change: transform, opacity;
   }
@@ -589,7 +548,7 @@ nav[data-include] {
 
   /* Toggle on */
   .mobile-menu-toggle:checked ~ .mobile-menu-overlay {
-    opacity: 1;
+    opacity: 0;
     visibility: visible;
     pointer-events: auto;
     transition: opacity 320ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -599,7 +558,7 @@ nav[data-include] {
     visibility: visible;
     pointer-events: auto;
     transform: translate(-50%, 0) scale(1);
-    transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   /* Staggered animations for menu items when opened */
@@ -607,55 +566,55 @@ nav[data-include] {
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(1) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 100ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 20ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 20ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(2) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(2) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 150ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 40ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 40ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(3) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(3) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 200ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 60ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 60ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(4) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(4) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 100ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 80ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 80ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(5) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(5) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 150ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 100ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(6) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(6) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 200ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 200ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 120ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 120ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(7) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(7) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 250ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 140ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 140ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(8) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(8) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 300ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 160ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 160ms;
   }
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(9) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(9) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 350ms, opacity 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 350ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 180ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 180ms;
   }
 
   .main {
