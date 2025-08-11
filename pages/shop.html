@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shop • Tactalapaca</title>
     <link rel="stylesheet" href="../styles/main.css" />
+    <style>
+      /* Page-local styles just for the shop embed */
+      #main {
+        padding: 0;
+        overflow: hidden;
+      }
+      /* Wrapper clips the iframe's internal scrollbar and sets height */
+      .shop-embed-wrap {
+        position: relative;
+        width: 100%;
+        height: 100svh;
+        overflow: hidden;
+      }
+    </style>
+
     <script src="../scripts/language.js"></script>
     <script src="../scripts/theme.js" defer></script>
     <script src="../scripts/include.js" defer></script>
   </head>
   <body>
     <nav data-include="../blocks/navigation.html" aria-label="Sidebar"></nav>
-    <main id="main" style="overflow: hidden">
-      <iframe class="shop-iframe" src="https://tactalapaca.printify.me" style="border: none; width: 100%; height: 100vh"></iframe>
+    <main id="main">
+      <div class="shop-embed-wrap">
+        <iframe src="https://tactalapaca.printify.me" style="position: absolute; inset: 0 -20px 0 0; width: calc(100% + 15px); height: 100%; border: 0; display: block" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </main>
   </body>
 </html>
