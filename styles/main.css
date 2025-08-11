@@ -561,60 +561,41 @@ nav[data-include] {
     transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  /* Staggered animations for menu items when opened */
+  /* Staggered animations for menu items when opened - row by row (3x3 grid) */
+  /* First row: items 1, 2, 3 */
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(1) a,
-  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(1) button {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 20ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 20ms;
-  }
+  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(1) button,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(2) a,
-  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(2) button {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 40ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 40ms;
-  }
+  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(2) button,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(3) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(3) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 60ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 60ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 50ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 50ms;
   }
+  
+  /* Second row: items 4, 5, 6 */
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(4) a,
-  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(4) button {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 80ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 80ms;
-  }
+  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(4) button,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(5) a,
-  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(5) button {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 100ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 100ms;
-  }
+  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(5) button,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(6) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(6) button {
     transform: translateY(0) scale(1);
     opacity: 1;
     transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 120ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 120ms;
   }
+  
+  /* Third row: items 7, 8, 9 */
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(7) a,
-  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(7) button {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 140ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 140ms;
-  }
+  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(7) button,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(8) a,
-  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(8) button {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 160ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 160ms;
-  }
+  .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(8) button,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(9) a,
   .mobile-menu-toggle:checked ~ .mobile-menu-panel .mobile-menu-item:nth-child(9) button {
     transform: translateY(0) scale(1);
     opacity: 1;
-    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 180ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 180ms;
+    transition: transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 190ms, opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 190ms;
   }
 
   .main {
